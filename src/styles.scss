@@ -1,0 +1,136 @@
+body {
+	font: 14px 'Century Gothic', Futura, sans-serif;
+	margin: 20px;
+}
+
+.container {
+	height: 100vh;
+	margin-top: 10rem;
+
+	.game-info {
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 10px;
+	}
+
+	.board-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 324px;
+		height: 324px;
+		margin: 0 auto;
+
+		background: #ffffff;
+		border: 1px solid #ffffff;
+		box-sizing: border-box;
+		box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+		border-radius: 20px;
+
+		.board-row {
+			&:after {
+				clear: both;
+				content: '';
+				display: table;
+			}
+			.square {
+				border: 3px solid #c1c1c1;
+				background: transparent;
+				float: left;
+				font-size: 40px;
+				font-weight: bold;
+				line-height: 45px;
+				height: 100px;
+				margin-right: -1px;
+				margin-top: -1px;
+				padding: 0;
+				text-align: center;
+				width: 100px;
+
+				svg {
+					width: 50%;
+					height: auto;
+				}
+			}
+		}
+
+		.board-row:first-of-type {
+			.square:nth-of-type(1) {
+				border: none;
+			}
+
+			.square:nth-of-type(2) {
+				border-top: none;
+				border-bottom: none;
+			}
+
+			.square:nth-of-type(3) {
+				border: none;
+			}
+		}
+
+		.board-row:nth-of-type(2) {
+			.square:nth-of-type(1) {
+				border-left: none;
+				border-right: none;
+			}
+
+			.square:nth-of-type(3) {
+				border-left: none;
+				border-right: none;
+			}
+		}
+
+		.board-row:nth-of-type(3) {
+			.square:nth-of-type(1) {
+				border: none;
+			}
+
+			.square:nth-of-type(2) {
+				border-bottom: none;
+				border-top: none;
+			}
+
+			.square:nth-of-type(3) {
+				border: none;
+			}
+		}
+	}
+
+	.navigation {
+		width: 324px;
+		margin: 24px auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		justify-content: space-between;
+
+		button:first-of-type {
+			margin-right: 15px;
+		}
+
+		button {
+			height: 47px;
+			min-width: 139px;
+			background: #bcbcbc;
+			border-radius: 10px;
+			font-family: Roboto;
+			font-size: 30px;
+			cursor: pointer;
+			border: none;
+
+			&:disabled {
+				background-color: #dbdbdb;
+				cursor: not-allowed;
+			}
+			&.start {
+				background-color: #a8b9f4;
+				color: #ffffff;
+
+				&:disabled {
+					background-color: #dbdbdb;
+				}
+			}
+		}
+	}
+}
